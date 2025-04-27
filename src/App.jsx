@@ -5,22 +5,33 @@ import { OriginalLink } from "./OriginalLink.jsx";
 import { FormBtn } from "./FormBtn.jsx";
 import { Label } from "./Label.jsx"
 import { InputText } from "./InputText.jsx"
+import { Link } from "./Link.jsx"
 let FormData=()=>{
+  let handleSubmit=()=>{
+    confirm("Are you sure you want to submit?");
+  }
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Head>URL Shortener</Head>
       <OriginalLink>
-        <Label htmlFor="originalLink">Original Link: </Label>
+        <Label>Original Link: </Label>
         <InputText name="originalLink"/>
       </OriginalLink>
       <OriginalLink>
-        <Label htmlFor="shortenedLink">Shortened Link: </Label>
-        <InputText name="targetLink" readOnly/>
+        <Label>Custom Name: </Label>
+        <InputText name="shortName"/>
       </OriginalLink>
       <FormBtn>
-        <Button>Shorten</Button>
+        <Button type="submit">Shorten</Button>
       </FormBtn>
-      
+      <OriginalLink>
+        <Label>Original Link: </Label>
+        <Link />
+      </OriginalLink>
+      <OriginalLink>
+        <Label>Shortened Link: </Label>
+        <Link />
+      </OriginalLink>
     </Form>
   )
 }
