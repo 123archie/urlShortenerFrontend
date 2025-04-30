@@ -10,6 +10,7 @@ let FormData=()=>{
   let handleSubmit=()=>{
     confirm("Are you sure you want to submit?");
   }
+  
   return (
     <Form onSubmit={handleSubmit}>
       <Head>URL Shortener</Head>
